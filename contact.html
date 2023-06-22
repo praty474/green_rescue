@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Rescue</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo"><img src="img/logo.png" alt="" height="80px" /></h2>
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="login.php">Login</a>
+        <a href="payment.html">Donate</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+    <div class="contact_container">
+      <img src="img/leaf.png" id="newleaf" />
+      <span class="big-circle"></span>
+      <img src="img/shape.png" alt="shape" class="square" />
+      <div class="form-detail">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Have a question or want to get involved? Reach out to Green Rescue's
+            dedicated team. We're here to help!
+          </p>
+          <div class="info">
+            <div class="information">
+              <img src="img/location.png" alt="location" class="icon" />
+              <p>Kadaghari Chowk, Kathmandu, 44600</p>
+            </div>
+            <div class="information">
+              <img src="img/email.png" alt="email" class="icon" />
+              <p>support@greenrescue.org</p>
+            </div>
+            <div class="information">
+              <img src="img/phone.png" alt="phone" class="icon" />
+              <p>01-4444123</p>
+            </div>
+          </div>
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form
+            class="form-fill"
+            onsubmit="send_email(); reset(); return false;"
+          >
+            <h3 class="title">Contact Us</h3>
+            <div class="input-container">
+              <input
+                type="text"
+                name="name"
+                id="con_name"
+                class="contact_input"
+              />
+              <label for="">Name</label>
+              <span>Name</span>
+            </div>
+            <div class="input-container">
+              <input
+                type="email"
+                name="email"
+                id="con_email"
+                class="contact_input"
+              />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input
+                type="tel"
+                name="phone"
+                id="con_phone"
+                class="contact_input"
+              />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea
+                name="message"
+                id="con_message"
+                class="contact_input"
+              ></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="contact_btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy;2023 Green Rescue</p>
+    </footer>
+  </body>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="script.js"></script>
+</html>
