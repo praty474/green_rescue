@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -52,12 +53,12 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="#">
+        <form action="#" method="post">
           <div class="page slide-page">
             <div class="title">Please select amount:</div>
             <div class="field">
               <div class="label">Amount</div>
-              <input type="text" />
+              <input type="text" name= "amount"/>
             </div>
             <!-- <div class="field">
            
@@ -72,15 +73,15 @@
             <div class="title">Details</div>
             <div class="field">
               <div class="label">Name</div>
-              <input type="text" />
+              <input type="text" name="display_name" />
             </div>
             <div class="field">
               <div class="label">Email Address</div>
-              <input type="text" />
+              <input type="email" name= "email" />
             </div>
             <div class="field">
               <div class="label">Message</div>
-              <input type="text" />
+              <input type="text" name= "message" />
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Previous</button>
@@ -135,7 +136,7 @@
 
             <div class="field btns">
               <button class="prev-3 prev">Previous</button>
-              <button class="submit">Submit</button>
+              <button class="submit" name="submit">Submit</button>
             </div>
           </div>
         </form>
