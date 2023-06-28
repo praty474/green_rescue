@@ -1,3 +1,5 @@
+
+            
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +32,7 @@
       .row {
         display: flex;
         justify-content: space-between;
-        margin: 10px 5px;
+        margin: 10px 5px ;
       }
 
       .row2 {
@@ -46,6 +48,7 @@
       .message {
         font-size: 14px;
         max-width: 200px;
+        
       }
       .amt {
         background: #1f5f5b;
@@ -63,45 +66,35 @@
   <body>
     <div class="container">
       <div class="box">
+ 
+      <?php
+require_once 'connection.php';
+$query = "select * from donator ORDER BY donator_id DESC limit 10";
+            $stmt = mysqli_query($conn,$query);
+            if($stmt){
+              while($row = mysqli_fetch_assoc($stmt)){
+                  $donator_id[] = $row['donator_id'];
+                  $display_name = $row['display_name'];
+                  $message = $row['message'];
+                  $date = $row['date'];
+                  $amount = $row['amount'];
+
+      echo'
         <div class="user">
           <div class="row">
-            <div class="name">Prabin</div>
-            <div class="amount"><div class="amt">Rs 1000</div></div>
+            <div class="name"> '.$display_name.'</div>
+            <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
           </div>
           <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
+            <div class="message"> '.$message.'</div>
+            <div class="date">  '.$date.'</div>
           </div>
-        </div>
-        <div class="user">
-          <div class="row">
-            <div class="name">Prabesh</div>
-            <div class="amount"><div class="amt">Rs 2000</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
-        </div>
-        <div class="user">
-          <div class="row">
-            <div class="name">Pratyush</div>
-            <div class="amount"><div class="amt">Rs 100</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
-        </div>
-        <div class="user">
-          <div class="row">
-            <div class="name">DEMO</div>
-            <div class="amount"><div class="amt">Rs 200</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
+        </div>';
+     
+      }}
+     
+      ?>      
+       
         </div>
       </div>
     </div>

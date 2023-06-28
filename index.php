@@ -49,12 +49,16 @@
           /* border-color: green */
         }
       }
+      
       .container {
         /* margin-top: 10%; */
         /* margin-left: 40%; */
         padding: 60px 100px;
         width: 100%;
+        height: max-content;
         background: #003329;
+     
+      
       }
       .box {
         width: 400px;
@@ -62,6 +66,7 @@
         border-radius: 10px;
         background: #fff;
         padding: 30px 20px;
+       
       }
       .user {
         border-bottom: 1px solid rgba(128, 128, 128, 0.52);
@@ -174,46 +179,35 @@
     </section>
     <div class="container">
       <div class="box">
-        <div class="user">
-          <div class="row">
-            <div class="name">Prabin</div>
-            <div class="amount"><div class="amt">Rs 100</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
-        </div>
-        <div class="user">
-          <div class="row">
-            <div class="name">Prabesh</div>
-            <div class="amount"><div class="amt">Rs 100</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
-        </div>
-        <div class="user">
-          <div class="row">
-            <div class="name">Pratyush</div>
-            <div class="amount"><div class="amt">Rs 100</div></div>
-          </div>
-          <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
-          </div>
-        </div>
+ 
+      <?php
+require_once 'connection.php';
+$query = "select * from donator ORDER BY donator_id DESC limit 10";
+            $stmt = mysqli_query($conn,$query);
+            if($stmt){
+              while($row = mysqli_fetch_assoc($stmt)){
+                  $donator_id[] = $row['donator_id'];
+                  $display_name = $row['display_name'];
+                  $message = $row['message'];
+                  $date = $row['date'];
+                  $amount = $row['amount'];
 
+      echo'
         <div class="user">
           <div class="row">
-            <div class="name">DEMO</div>
-            <div class="amount"><div class="amt">Rs 100</div></div>
+            <div class="name"> '.$display_name.'</div>
+            <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
           </div>
           <div class="row2">
-            <div class="message">This is message Lorem ipsum dolor sit</div>
-            <div class="date">2023-02-02, 4:55:22 AM</div>
+            <div class="message"> '.$message.'</div>
+            <div class="date">  '.$date.'</div>
           </div>
+        </div>';
+     
+      }}
+     
+      ?>      
+       
         </div>
       </div>
     </div>
