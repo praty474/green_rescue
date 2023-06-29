@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Donate</title>
-
+    <link rel="icon" type="image/x-icon" href="img/fav.png" />
     <link rel="stylesheet" href="payment.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="#" method="post">
+        <form action="#" method="POST">
           <div class="page slide-page">
             <div class="title">Please select amount:</div>
             <div class="field">
@@ -81,7 +81,8 @@
             </div>
             <div class="field">
               <div class="label">Message</div>
-              <input type="text" name= "message" />
+              <input type="textarea" name= "message" maxlength="60"/>
+        
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Previous</button>
