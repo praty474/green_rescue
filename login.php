@@ -45,10 +45,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <header>
     <h2 class="logo"><img src="img/logo.png" alt="" height="80px" /></h2>
       <nav class="navigation">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <a href="#">Services</a>
         <a href="login.php" class="active">Login</a>
-        <a href="payment.html">Donate</a>
+        <a href="payment.php">Donate</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>

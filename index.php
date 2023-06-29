@@ -88,10 +88,13 @@
         color: #159947;
         font-size: 20px;
         font-weight: 600;
+
       }
       .message {
         font-size: 14px;
         max-width: 200px;
+   
+       
       }
       .amt {
         background: #1f5f5b;
@@ -104,6 +107,21 @@
       .date {
         font-size: 11px;
       }
+      h1{
+        text-align:center;
+        margin-bottom: 15px;
+        color:#1f5f5b;
+      }
+      .user {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .user.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
     </style>
   </head>
 
@@ -111,10 +129,10 @@
     <header>
       <h2 class="logo"><img src="img/logo.png" alt="" height="80px" /></h2>
       <nav class="navigation">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.php" class="active">Home</a>
         <a href="#">Services</a>
         <a href="login.php">Login</a>
-        <a href="payment.html">Donate</a>
+        <a href="payment.php">Donate</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
@@ -179,6 +197,7 @@
     </section>
     <div class="container">
       <div class="box">
+        <h1>Recent</h1>
  
       <?php
 require_once 'connection.php';
@@ -194,13 +213,13 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
 
       echo'
         <div class="user">
-          <div class="row">
-            <div class="name"> '.$display_name.'</div>
+          <div class="row ">
+            <div class="name "> '.$display_name.'</div>
             <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
           </div>
-          <div class="row2">
-            <div class="message"> '.$message.'</div>
-            <div class="date">  '.$date.'</div>
+          <div class="row2 ">
+            <div class="message "> '.$message.'</div>
+            <div class="date  ">  '.$date.'</div>
           </div>
         </div>';
      
@@ -241,6 +260,34 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
         let value = window.scrollY;
         nbr.style.marginTop = value * 1.5 + "px";
       });
+
+     //user
+
+// JavaScript code to reveal "user" class on scroll all at once
+const userElements = document.querySelectorAll('.user');
+
+const revealUser = () => {
+  userElements.forEach((userElement) => {
+    if (isElementInViewport(userElement)) {
+      userElement.classList.add('reveal');
+    }
+  });
+};
+
+const isElementInViewport = (element) => {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+window.addEventListener('scroll', revealUser);
+window.addEventListener('resize', revealUser);
+revealUser(); // Call once on initial load
+
     </script>
   </body>
 </html>

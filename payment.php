@@ -12,10 +12,10 @@
     <div class="header">
       <h2 class="logo"><img src="img/logo.png" alt="" height="80px" /></h2>
       <nav class="navigation">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <a href="#">Services</a>
         <a href="login.php">Login</a>
-        <a href="payment.html" class="active">Donate</a>
+        <a href="payment.php" class="active">Donate</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
