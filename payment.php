@@ -81,7 +81,12 @@
             </div>
             <div class="field">
               <div class="label">Message</div>
-              <input type="textarea" name= "message" maxlength="60"/>
+              <!-- <input type="textarea" name= "message" maxlength="60"/> -->
+              <textarea name="message" id="message" row="2" cols="55" maxlength="60" style="  
+              border-radius: 5px;
+             border: 1px solid lightgray;
+             padding-left: 15px;
+ "></textarea>
         
             </div>
             <div class="field btns">
