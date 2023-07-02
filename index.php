@@ -55,21 +55,68 @@
       .container {
         /* margin-top: 10%; */
         /* margin-left: 40%; */
-        padding: 60px 100px;
+        padding: 10px 100px 60px 100px;
         width: 100%;
         height: max-content;
         background: #003329;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+  
      
-      
+  
       }
       .box {
-        width: 400px;
+        width: 500px;
         height: max-content;
         border-radius: 10px;
         background: #fff;
         padding: 30px 20px;
-       
+      
       }
+      .box2 {
+        width: 500px;
+        height: 400px;
+        border-radius: 10px;
+        background: #fff;
+        padding: 30px 20px;
+      }
+      .box2 img{
+        object-fit: cover;
+        height:130px;
+         width: 450px;
+         border-radius: 10px;
+         margin-bottom: 10px;
+      }
+      .event_desc{
+     /* float:right; */
+     color: green;
+     height: 280px;
+     width: 200px;
+      }
+      .box3 {
+        width: 500px;
+        height: 200px;
+        border-radius: 10px;
+        background: #fff;
+        padding: 30px 20px;
+        margin-top: 10px;
+      }
+         .box4 {
+        width: 500px;
+        height: 50px;
+        border-radius: 10px;
+        background: #fff;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .box4 img{
+        height: 40px;
+        mix-blend-mode: multiply;
+        float:right;
+      
+      }
+      
       .user {
         border-bottom: 1px solid rgba(128, 128, 128, 0.52);
         margin-bottom: 10px;
@@ -94,7 +141,7 @@
       }
       .message {
         font-size: 14px;
-        max-width: 200px;
+        max-width: 300px;
    
        
       }
@@ -125,6 +172,8 @@
       transform: translateY(0);
     }
     </style>
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
   </head>
 
   <body>
@@ -228,8 +277,38 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
       }}
      
       ?>      
-       
         </div>
+
+        <div class="right">  
+         <div class="box2">
+          <h1>Events</h1>
+          <img src="img/planting.jpg" alt=""  >
+          <span class="event_desc">
+          This reforestation effort aims to help residents recover from the many wildfires that have burned through Nepal, including the deforestation. The 2018 wildfire season saw an estimated 8,000 fires burning through more than 1.8 million acres of forestland between July and December. 
+          </span>
+        </div>
+        <div class="box3">
+          <h1>Team Members</h1>
+            <!-- <img src="img/hill1.png" alt="" height="100px"> -->
+            <div class="1">Prabesh</div>
+            <div class="2">Prabin</div>
+            <div class="3">Pratyush</div>
+        </div>
+        <div class="box4">
+       
+          <span>
+            Social
+          <!-- <h1>Social Medias</h1> -->
+            <img src="img/logo/fb.jpg" alt="">
+            <img src="img/logo/ig.jpg" alt="">
+            <img src="img/logo/twitter.jpg" alt="">
+            </span>
+            <!-- <img src="img/hill1.png" alt="" height="100px"> -->
+        </div>
+      </div>
+      
+        
+      
       </div>
     </div>
 

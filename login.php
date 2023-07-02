@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           $_SESSION['user_password'] = $user_password;
           echo "<script>
                   alert('Login successful');
-                  window.location.href = 'index.html';
+                  window.location.href = 'index.php';
                 </script>";
       } else {
           echo "<script>alert('Invalid email or password');</script>";
@@ -113,7 +113,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if ( email === "" || password === "") {
           alert("Please fill in all fields");
- 
           return false;
         }
         // If validation passes, you can proceed with form submission
