@@ -93,7 +93,8 @@
      color: green;
      height: 280px;
      width: 200px;
-      }
+     
+  }
       .box3 {
         width: 500px;
         height: 200px;
@@ -101,22 +102,40 @@
         background: #fff;
         padding: 30px 20px;
         margin-top: 10px;
+        font-size: 18px;
+        
+
       }
+      .team{
+ 
+      display: flex;
+        justify-content: space-between;
+        padding:20px;
+        list-style: none;    
+        font-weight: bolder;
+      }
+
+
          .box4 {
         width: 500px;
-        height: 50px;
+        height: max-content;
         border-radius: 10px;
         background: #fff;
-        padding: 10px;
+        padding: 10px 20px;
         margin-top: 10px;
+        font-size: 28px;
+        font-weight: bolder;
+color: #1f5f5b;
       }
       .box4 img{
-        height: 40px;
-        mix-blend-mode: multiply;
-        float:right;
-      
+        width: 40px;
+        mix-blend-mode: normal;
+        margin: 0px 10px;
+      float: right;
       }
+  
       
+    
       .user {
         border-bottom: 1px solid rgba(128, 128, 128, 0.52);
         margin-bottom: 10px;
@@ -290,19 +309,22 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
         <div class="box3">
           <h1>Team Members</h1>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
-            <div class="1">Prabesh</div>
-            <div class="2">Prabin</div>
-            <div class="3">Pratyush</div>
+            <div class="team "> 
+              <li>Prabesh</li>
+              <li>Prabin</li>
+              <li>Pratyush</li>
+          </div>
+    
         </div>
         <div class="box4">
        
-          <span>
+          <div class= "social">
             Social
           <!-- <h1>Social Medias</h1> -->
-            <img src="img/logo/fb.jpg" alt="">
-            <img src="img/logo/ig.jpg" alt="">
-            <img src="img/logo/twitter.jpg" alt="">
-            </span>
+            <img src="img/logo/fb.png" alt="">
+            <img src="img/logo/ig.png" alt="">
+            <img src="img/logo/twitter.png" alt="">
+    </div>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
         </div>
       </div>
