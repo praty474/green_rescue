@@ -5,7 +5,10 @@ if(isset($_POST['search']))
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-    $query = "SELECT * FROM `donator` WHERE CONCAT(`donator_id`, `display_name`, `message`, `date` , `amount`) LIKE '%".$valueToSearch."%'";
+
+    // $query = "SELECT * FROM `donator` WHERE CONCAT(`donator_id`, `display_name`, `message`, `date` , `amount`) LIKE '%".$valueToSearch."%'";   
+
+     $query = "SELECT * FROM `donator` WHERE CONCAT(`display_name`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
     
 }
@@ -29,17 +32,34 @@ function filterTable($query)
     <head>
         <title>PHP HTML TABLE DATA SEARCH</title>
         <style>
-            table,tr,th,td
-            {
-                border: 1px solid black;
+       
+            th{
+                background: navy;
+                color:#fff;
+                font-size: 18px;
             }
+            .container{
+                text-align:center;
+                align-items:center;
+            }
+            table{
+                margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  text-align:left;
+            }
+            tr:nth-child(even) {background-color: #f2f2f2;}
+          
         </style>
     </head>
     <body>
+        <div class="container">
+        <h1>Donator List</h1>
         
         <form action="admin.php" method="post">
-            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
-            <input type="submit" name="search" value="Filter"><br><br>
+            <label for="valueToSearch">Search</label>
+            <input type="text" name="valueToSearch" placeholder="Search Name">
+            <input type="submit" name="search" value="Search"><br><br>
            
             <table>
                 <tr>
@@ -76,5 +96,6 @@ function filterTable($query)
             <td colspan="5">Total Amount Collected: Rs '.$sum.'</td>
         </tr>';
             ?>
+            </div>
     </body>
 </html>
