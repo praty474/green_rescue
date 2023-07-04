@@ -30,7 +30,8 @@ function filterTable($query)
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHP HTML TABLE DATA SEARCH</title>
+        <title>Admin
+        </title>
         <style>
        
             th{
@@ -96,6 +97,16 @@ function filterTable($query)
             <td colspan="5">Total Amount Collected: Rs '.$sum.'</td>
         </tr>';
             ?>
+            <div class="events">
+                <h1>Events</h1>
+                <form action="post">
+                <Label>Image</Label>
+                <input type="file" src="" alt="">  <br>
+                <Label>Description</Label>
+                <textarea name="desc" id="" cols="30" rows="2"></textarea>
+                <input type="submit" value="submit">
+                </form>
+            </div>
             </div>
     </body>
 </html>

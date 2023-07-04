@@ -104,6 +104,7 @@
         margin-top: 10px;
         font-size: 18px;
         
+        
 
       }
       .team{
@@ -175,10 +176,21 @@ color: #1f5f5b;
       .date {
         font-size: 11px;
       }
-      h1{
-        text-align:center;
+      .heading{
+        margin: 10px 5px;
         margin-bottom: 15px;
         color:#1f5f5b;
+        display: flex;
+        justify-content: space-between;
+        text-align:center;
+      }
+      .head{
+        margin: 10px 5px;
+        margin-bottom: 15px;
+        color:#1f5f5b;
+        /* display: flex;
+        justify-content: space-between; */
+        text-align:center;
       }
       .user {
       opacity: 0;
@@ -190,6 +202,7 @@ color: #1f5f5b;
       opacity: 1;
       transform: translateY(0);
     }
+
     </style>
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
@@ -268,8 +281,8 @@ color: #1f5f5b;
     </section>
     <div class="container">
       <div class="box">
-        <h1>Recent</h1>
- 
+        <h1 class="heading">Recent <a href="search.php"><img src="img/logo/search.png" alt="" height="30px"></a></h1>
+        
       <?php
 require_once 'connection.php';
 $query = "select * from donator ORDER BY donator_id DESC limit 10";
@@ -301,14 +314,14 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
 
         <div class="right">  
          <div class="box2">
-          <h1>Events</h1>
+          <h1 class="head">Events</h1>
           <img src="img/planting.jpg" alt=""  >
           <span class="event_desc">
           This reforestation effort aims to help residents recover from the many wildfires that have burned through Nepal, including the deforestation. The 2018 wildfire season saw an estimated 8,000 fires burning through more than 1.8 million acres of forestland between July and December. 
           </span>
         </div>
         <div class="box3">
-          <h1>Team Members</h1>
+          <h1 class= "head">Team Members</h1>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
             <div class="team "> 
               <li>Prabesh</li>
@@ -322,9 +335,9 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
           <div class= "social">
             Social
           <!-- <h1>Social Medias</h1> -->
-            <img src="img/logo/fb.png" alt="">
-            <img src="img/logo/ig.png" alt="">
-            <img src="img/logo/twitter.png" alt="">
+            <a href="http://facebook.com" ><img src="img/logo/fb.png" alt=""></a>
+            <a href="http://instagram.com" ><img src="img/logo/ig.png" alt=""></a>
+            <a href="http://twitter.com" ><img src="img/logo/twitter.png" alt=""></a>
     </div>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
         </div>
