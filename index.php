@@ -153,7 +153,7 @@ color: #1f5f5b;
         margin: 10px 5px;
       }
       .name {
-        color: #159947;
+        color:  #358391;
         font-size: 20px;
         font-weight: 600;
 
@@ -200,7 +200,7 @@ color: #1f5f5b;
       <h2 class="logo"><img src="img/logo.png" alt="" height="80px" /></h2>
       <nav class="navigation">
         <a href="index.php" class="active">Home</a>
-        <a href="#">Services</a>
+        <a href="#describe">Services</a>
         <a href="login.php">Login</a>
         <a href="payment.php">Donate</a>
         <a href="contact.html">Contact</a>
@@ -223,11 +223,12 @@ color: #1f5f5b;
       </h2>
 
       <h3 data-target="131200" class="count" id="nbr">0</h3>
+
       <img src="img/leaf.png" id="leaf" />
       <img src="img/plant.png" id="plant" />
     </section>
 
-    <section class="describe">
+    <section class="describe" id="describe">
       <h2>Green Rescue Vision</h2>
       <p>
         At Green Rescue, we're all about bringing people closer to the
