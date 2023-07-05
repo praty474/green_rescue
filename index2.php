@@ -313,14 +313,36 @@ $query = "select * from donator ORDER BY donator_id DESC limit 10";
         </div>
 
         <div class="right">  
-         <div class="box2">
-          <h1 class="head">Events</h1>
+
+        <?php
+  require_once 'connection.php';
+  $imageQuery = "SELECT * FROM Image order by id desc limit 1";
+  $imageResult = mysqli_query($conn, $imageQuery);
+  if ($imageResult && mysqli_num_rows($imageResult) > 0) {
+    $imageRow = mysqli_fetch_assoc($imageResult);
+    $image = $imageRow['Filename'];
+    $description = $imageRow['description'];
     
-         <img src="img/planting.jpg" alt="">
-          <span class="event_desc">
-          This reforestation effort aims to help residents recover from the many wildfires that have burned through Nepal, including the deforestation. The 2018 wildfire season saw an estimated 8,000 fires burning through more than 1.8 million acres of forestland between July and December. 
-          </span>
-        </div>
+  }
+?>
+
+        <div class="box2">
+  <h1 class="head">Events</h1>
+  <?php
+    if (isset($image) && isset($description)) {
+      
+        echo '<img src="image/'.$image.'" >';
+
+        echo'<span class="event_desc">' . $description . '</span>';
+
+         }
+    ?>
+       
+   
+   
+    
+</div>
+
         <div class="box3">
           <h1 class= "head">Team Members</h1>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
