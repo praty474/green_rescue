@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </script>";
       }else {
         if ($user_email == "admin" && $user_password == "admin") {
-          header("Location: admin.php");
+          header("Location: admins.php");
           exit;
          } else {
           echo "<script>alert('Invalid email or password');</script>";

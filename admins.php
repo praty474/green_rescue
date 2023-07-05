@@ -22,6 +22,7 @@
             width: 50%;
             margin: 20px auto;
             border: 2px solid #dad7d7;
+            text-align:center;
         }
 
         form {
@@ -57,7 +58,7 @@
 <body style="margin:20px auto">  
 <div class="container">
 <div class="row header" style="text-align:center;color:green">
-<h3>Donator</h3>
+<h1>Donator</h1>
 </div>
 <table id="myTable" class="table table-striped" >  
         <thead>  
@@ -112,7 +113,7 @@ $query = "select * from donator ";
         <form method="POST" action="" enctype="multipart/form-data">
             <input type="file" name="choosefile" value="" />
             <!-- <input type="text" name="description" placeholder="Enter description" /> Added input field for description -->
-           <textarea name="description" placeholder="Enter description"id="" cols="80" rows="5"></textarea>
+           <textarea name="description" placeholder="Enter description"id="" cols="60" rows="5"></textarea>
                 <button type="submit" name="uploadfile">
                     UPLOAD
                 </button>
