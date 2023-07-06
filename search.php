@@ -34,9 +34,44 @@ function filterTable($query)
         <title>Admin
         </title>
         <style>
-   * {
-  font-family: "Poppins", sans-serif;
-}
+        * {
+            font-family: "Poppins", sans-serif;
+            /* margin: 5px; */
+        }
+
+        body {
+            background-color: #204b9e;
+            background-image: linear-gradient(180deg, #204b9e 0%, #0d9830 100%);
+            height: 100%;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Add the following CSS for wave background */
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('wave.png') repeat-x; /* Replace 'wave.png' with the path to your wave image */
+            z-index: -1;
+        }
+
+        /* Rest of your CSS styles */
+        /* ... */
+
+        /* Add the following CSS for the leaf image */
+        .bg-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
             th{
                 background: navy;
@@ -47,6 +82,7 @@ function filterTable($query)
                 text-align:center;
                 align-items:center;
                 margin: 20px;
+               
             }
             
           .input{
@@ -59,6 +95,7 @@ function filterTable($query)
             margin: 0;
             border:2px solid lightgray;
           }
+        
 
  .search{
             width: 10%;
@@ -123,31 +160,33 @@ function filterTable($query)
             background: gray;
           }
           .heading{
-            color: #fff;
+            color: #1f5f5b;
             font-weight: 900;
 
           }
           #quote{
-            color: #fff;
+            color: #1f5f5b;
         
           }
  
           .back-button {
             float: left; /* Float the Back button to the left */
             margin-top: 10px; /* Adjust the top margin as needed */
+            margin-left: 10px;
         }
 
         .back {
             display: inline-block; /* Make the Back button inline-block */
             height: 20px;
             width: 50px;
-            background: #fff;
+            background: lightgray;
             font-size: 20px;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius:15px;
             padding: 10px 5px;
-        }
+            color:#1f5f5b;}
+
         .back:hover{
           background: darkgreen;
           color:white;
@@ -155,6 +194,8 @@ function filterTable($query)
 .logo{
   margin-left: -50px;
 }
+
+
         </style>
         <script>
         function validateInput() {
@@ -167,13 +208,16 @@ function filterTable($query)
         }
     </script>
     </head>
-    <body bgcolor=#003329>
+    <body >
     <div class="back-button">
             <a class="back" href="index.php">Back</a>
           </div>
-        <div class="container">
-         
+          
+         <img src="img/plant.png" alt="" class="bg-img">
+         <img src="img/5330558.jpg" alt="" class="bg-img">
+      
 
+        <div class="container">
           <img src="img/logo.png" alt="" height="100px" class="logo">
         <h1 class="heading">DONOR SEARCH</h1>
         <p id="quote">“A fool sees not the same tree that a wise man sees.” <br>-William Blake</p>
@@ -189,6 +233,7 @@ function filterTable($query)
      
       <center>
 
+      <!-- populate table from mysql database -->
       <!-- populate table from mysql database -->
             
                     <?php
