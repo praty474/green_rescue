@@ -69,6 +69,7 @@ function filterTable($query)
             background: lightgray;
             margin: -5px;
             border:none;
+            margin-bottom:10px;
           }
           
       .user {
@@ -130,6 +131,30 @@ function filterTable($query)
             color: #fff;
         
           }
+ 
+          .back-button {
+            float: left; /* Float the Back button to the left */
+            margin-top: 10px; /* Adjust the top margin as needed */
+        }
+
+        .back {
+            display: inline-block; /* Make the Back button inline-block */
+            height: 20px;
+            width: 50px;
+            background: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px 5px;
+        }
+        .back:hover{
+          background: darkgreen;
+          color:white;
+        }
+.logo{
+  margin-left: -50px;
+}
         </style>
         <script>
         function validateInput() {
@@ -143,8 +168,13 @@ function filterTable($query)
     </script>
     </head>
     <body bgcolor=#003329>
+    <div class="back-button">
+            <a class="back" href="index.php">Back</a>
+          </div>
         <div class="container">
-          <img src="img/logo.png" alt="" height="100px">
+         
+
+          <img src="img/logo.png" alt="" height="100px" class="logo">
         <h1 class="heading">DONOR SEARCH</h1>
         <p id="quote">“A fool sees not the same tree that a wise man sees.” <br>-William Blake</p>
         <form action="search.php" method="post" onsubmit="return validateInput();" >
@@ -152,8 +182,9 @@ function filterTable($query)
             <input type="text" name="valueToSearch" class="input" placeholder="Search Name" id="searchInput"> 
             <input type="submit" name="search" class="search" value="Search">
            
-
-           <br><br>
+     
+           <!-- <br><br> -->
+     
            
      
       <center>

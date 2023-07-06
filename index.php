@@ -80,11 +80,12 @@
         border-radius: 10px;
         background: #fff;
         padding: 30px 20px;
+        text-align:center;
       }
       .box2 img{
         object-fit: cover;
         height:130px;
-         width: 450px;
+         width: 460px;
          border-radius: 10px;
          margin-bottom: 10px;
       }
@@ -93,6 +94,7 @@
      color: green;
      height: 280px;
      width: 200px;
+     
      
   }
       .box3 {
@@ -134,7 +136,14 @@ color: #1f5f5b;
         margin: 0px 10px;
       float: right;
       }
-  
+      .box4 img:hover{
+        width: 45px;
+        height: 45px;
+      background: lightgray;
+      border-radius: 50%;
+        margin: 0px 10px;
+      float: right;
+      }
       
     
       .user {
@@ -202,6 +211,15 @@ color: #1f5f5b;
       opacity: 1;
       transform: translateY(0);
     }
+
+    #search:hover{
+      height:40px;
+      width:40px;
+      color: gray;
+      background:  lightgray;
+      border-radius: 50%;
+    }
+
 
     </style>
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -281,7 +299,13 @@ color: #1f5f5b;
     </section>
     <div class="container">
       <div class="box">
-        <h1 class="heading">Recent <a href="search.php"><img src="img/logo/search.png" alt="" height="30px"></a></h1>
+        <h1 class="heading">Recent 
+          <a href="search.php" id="search">
+    
+            <img src="img/logo/search.png" alt="" height="30px">
+        
+          </a>
+  </h1>
         
       <?php
 require_once 'connection.php';
