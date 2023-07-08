@@ -6,16 +6,20 @@ if(isset($_POST['search']))
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-
     // $query = "SELECT * FROM `donator` WHERE CONCAT(`donator_id`, `display_name`, `message`, `date` , `amount`) LIKE '%".$valueToSearch."%'";   
 
      $query = "SELECT * FROM `donator` WHERE CONCAT(`display_name`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
-    
+    if(mysqli_num_rows($search_result) == 0) {
+      echo '<script>alert("No data found.");</script>';
+      $yourURL="search.php";
+echo ("<script>location.href='$yourURL'</script>");
+  }
 }
  else {
     $query = "SELECT * FROM `donator` limit 0";
     $search_result = filterTable($query);
+    
 }
 
 // function to connect and execute the query
@@ -40,15 +44,15 @@ function filterTable($query)
         }
 
         body {
-            background-color: #204b9e;
-            background-image: linear-gradient(180deg, #204b9e 0%, #0d9830 100%);
+            /* background-color: #204b9e;
+            background-image: linear-gradient(180deg, #204b9e 0%, #0d9830 100%); */
             height: 100%;
             margin: 0;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* Add the following CSS for wave background */
+
         body:before {
             content: "";
             position: fixed;
@@ -56,14 +60,10 @@ function filterTable($query)
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('wave.png') repeat-x; /* Replace 'wave.png' with the path to your wave image */
+           
             z-index: -1;
         }
 
-        /* Rest of your CSS styles */
-        /* ... */
-
-        /* Add the following CSS for the leaf image */
         .bg-img {
             position: fixed;
             top: 0;
@@ -95,7 +95,7 @@ function filterTable($query)
             margin: 0;
             border:2px solid lightgray;
           }
-        
+     
 
  .search{
             width: 10%;
@@ -200,6 +200,7 @@ function filterTable($query)
         <script>
         function validateInput() {
             var input = document.getElementById("searchInput").value;
+            
             if (input.length < 3) {
                 alert("Input must have at least three characters");
                 return false;
