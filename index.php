@@ -99,7 +99,7 @@
   }
       .box3 {
         width: 500px;
-        height: 200px;
+        height: max-content;
         border-radius: 10px;
         background: #fff;
         padding: 30px 20px;
@@ -195,7 +195,7 @@ color: #1f5f5b;
       }
       .head{
         margin: 10px 5px;
-        margin-bottom: 15px;
+    
         color:#1f5f5b;
         /* display: flex;
         justify-content: space-between; */
@@ -481,6 +481,64 @@ main label {
 .date {
   font-size: 11px;
 }
+
+/* team members */
+.team {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px 5px 20px;
+
+  font-weight: bolder;
+ justify-content: center;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+}
+
+.picture {
+  margin-right: 10px;
+  padding-left: 10px;
+  margin-top: 5px;
+  /* height: 50px; */
+  border-radius: 50%;
+
+  
+}
+.picture img{
+        object-fit: cover;
+        height: 55px;
+  border-radius: 50%;
+ 
+
+      }
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.team_name {
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.position {
+  font-size: 14px;
+  color: #1f5f5b;
+}
+
+
+
     </style>
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
@@ -659,18 +717,7 @@ main label {
               </div>
           </ul>
         </div>
-        <div class="row">
-          <div class="price-details">
-            <span class="price">49</span>
-            <p>For team collaboration</p>
-          </div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i><span>200 GB Premium Bandwidth</span></li>
-            <li><i class="fas fa-check"></i><span>FREE 100+ Installation Scripts WordPress Supported</span></li>
-            <li><i class="fas fa-check"></i><span>Two FREE Domain Registration .com and .np extensions only</span></li>
-            <li><i class="fas fa-check"></i><span>Unlimited Email Accounts & Databases</span></li>
-          </ul>
-        </div>
+      
       </div>
     </div>
     <!-- <button>Choose plan</button> -->
@@ -708,16 +755,33 @@ main label {
     
 </div>
 
-        <div class="box3">
-          <h1 class= "head">Team Members</h1>
-            <!-- <img src="img/hill1.png" alt="" height="100px"> -->
-            <div class="team "> 
-              <li>Prabesh</li>
-              <li>Prabin</li>
-              <li>Pratyush</li>
-          </div>
-    
-        </div>
+<div class="box3">
+  <h1 class="head">Team Members</h1>
+  <div class="team">
+    <div class="member">
+      <div class="picture"><img src="img/prabesh.jpg"  alt="" srcset=""></div>
+      <div class="details">
+        <div class="team_name">Prabesh Gupta</div>
+        <div class="position">Developer</div>
+      </div>
+    </div>
+    <div class="member">
+      <div class="picture"><img src="img/prabin.jpg" alt="" srcset=""></div>
+      <div class="details">
+        <div class="team_name">Prabin Rai</div>
+        <div class="position">Developer</div>
+      </div>
+    </div>
+    <div class="member">
+      <div class="picture"><img src="img/pratyush.jpg" alt="" srcset=""></div>
+      <div class="details">
+        <div class="team_name">Pratyush Kayastha</div>
+        <div class="position">Developer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="box4">
        
           <div class= "social">
