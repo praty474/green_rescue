@@ -71,7 +71,7 @@
         height: max-content;
         border-radius: 10px;
         background: #fff;
-        padding: 20px 20px;
+        padding: 30px 20px;
       
       }
       .box2 {
@@ -80,7 +80,7 @@
         border-radius: 10px;
         background: #fff;
         padding: 30px 20px;
-        text-align:justify;
+        text-align:center;
       }
       .box2 img{
         object-fit: cover;
@@ -220,267 +220,7 @@ color: #1f5f5b;
       border-radius: 50%;
     }
 
-    
-html {
-  scroll-behavior: smooth;
-}
 
-
-.wrapper {
-  width: 500px;
-
-  background: #fff;
-  border-radius: 16px;
-  /* padding: 10px 20px 0px 20px ; */
-  /* padding: 5px 20px 5px 20px; */
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-  padding-top: 10px;
-
-
-}
-/* 
-.wrapper main {
-  height: 55px;
-  width: 435px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  position: relative;
-  margin: 10px 25px;
-  margin-bottom: 0px;
-
-}
-
-main label {
-  height: 100%;
-  z-index: 2;
-  width: 50%;
-  display: flex;
-  cursor: pointer;
-  font-size: 18px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-} */
-main {
-  height: 55px;
-  width: 430px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  position: relative;
-  margin: 10px auto;
-  margin-bottom: 0px;
-}
-
-.labels-container {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-}
-
-.labels-container label {
-  flex: 1;
-  display: flex;
-  cursor: pointer;
-  font-size: 18px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.search-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
-  cursor: pointer;
-}
-/* 
-#tab-1:checked~main .tab-1,
-#tab-2:checked~main .tab-2,
-#tab-3:checked~main .tab-3 {
-  color: #fff;
-}
-
-main label:nth-child(2) {
-  width: 40%;
-}
-
-main .slider {
-  position: absolute;
-  height: 85%;
-  border-radius: inherit;
- background-color: #3bb78f;
-background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-  transition: all 0.3s ease;
-}
-
-#tab-1:checked~main .slider {
-  left: 5%;
-  width: 150px;
-  transform: translateX(5%);
-}
-
-#tab-2:checked~main .slider {
-  left: 70%;
-  width: 150px;
-  transform: translateX(-50%);
-} */
-
-main label {
-  height: 100%;
-  z-index: 2;
-  flex: 1;
-  display: flex;
-  cursor: pointer;
-  font-size: 18px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-#tab-1:checked ~ main .tab-1,
-#tab-2:checked ~ main .tab-2 {
-  color: #fff;
-}
-
-.slider {
-  position: absolute;
-  height: 85%;
-  border-radius: inherit;
-  background-color: #3bb78f;
-  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-  transition: all 0.3s ease;
-}
-
-#tab-1:checked ~ main .slider {
-  left: 5%;
-  width: 150px;
-  transform: translateX(0);
-}
-
-#tab-2:checked ~ main .slider {
-  left: 50%;
-  width: 150px;
-  transform: translateX(0);
-}
-
-
-.wrapper input[type="radio"] {
-  display: none;
-}
-
-.card-area {
-  overflow: hidden;
-}
-
-.card-area .cards {
-  display: flex;
-  width: 300%;
-}
-
-.cards .row {
-  width: 33.4%;
-}
-
-.cards .row-1 {
-  transition: all 0.3s ease;
-}
-
-#tab-1:checked~.card-area .cards .row-1 {
-  margin-left: 0.5%;
-}
-
-#tab-2:checked~.card-area .cards .row-1 {
-  margin-left: -33.4%;
-}
-
-
-
-
-
-
-.row .features li {
-  display: flex;
-  font-size: 15px;
-  list-style: none;
-  margin-bottom: 10px;
-  /* align-items: center; */
-}
-
-.features li i {
-  background: linear-gradient(#D5A3FF 0%, #77A5F8 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.features li span {
-  /* margin-left: 10px; */
-}
-
-
-
-.box {
-  width: 480px;
-  /* height: max-content; */
-  /* border-radius: 10px; */
-  /* background: #fff; */
-
-
-}
-
-.user {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.52);
-  margin-bottom: 10px;
-
-
-}
-
-.row-fir {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 5px;
-}
-
-.row2 {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 5px;
-}
-
-.name {
-  color: #358391;
-  font-size: 20px;
-  font-weight: 600;
-
-}
-
-.message {
-  font-size: 14px;
-  max-width: 280px;
-
-
-}
-
-.amt {
-  background: #1f5f5b;
-  color: white;
-  padding: 2px 4px;
-  border-radius: 5px;
-  text-align: center;
-  justify-content: center;
-}
-
-.date {
-  font-size: 11px;
-}
     </style>
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
@@ -558,129 +298,48 @@ main label {
       </p>
     </section>
     <div class="container">
-    <div class="wrapper">
-    <input type="radio" name="slider" id="tab-1" checked>
-    <input type="radio" name="slider" id="tab-2" >
+      <div class="box">
+        <h1 class="heading">Recent 
+          <a href="search.php" id="search">
+    
+            <img src="img/logo/search.png" alt="" height="30px">
+        
+          </a>
+  </h1>
+        
+      <?php
+require_once 'connection.php';
+$query = "select * from donator ORDER BY donator_id DESC limit 10";
+            $stmt = mysqli_query($conn,$query);
+            if($stmt){
+              while($row = mysqli_fetch_assoc($stmt)){
+                  $donator_id[] = $row['donator_id'];
+                  $display_name = $row['display_name'];
+                  $message = $row['message'];
+                  $date = $row['date'];
+                  $amount = $row['amount'];
 
-    <!-- <main>
-      <label for="tab-1" class="tab-1">Recent</label>
-      <label for="tab-2" class="tab-2">Top</label>
-      <a href="search.php">
-      <img src="img/logo/search.png" alt="" height="20px">
-      </a>
-
-      <div class="slider"></div>
-    </main> -->
-    <main>
-  <div class="labels-container">
-    <label for="tab-1" class="tab-1">Recent</label>
-    <label for="tab-2" class="tab-2">Top</label>
-  </div>
-  <a href="search.php" class="search-icon">
-    <img src="img/logo/search.png" alt="" height="20px">
-  </a>
-  <div class="slider"></div>
-</main>
-
-
-    <div class="card-area">
-      <div class="cards">
-        <div class="row row-1">
-         
-          <ul class="features">
-            <div class="box">
-              
-              
-            <?php
-      require_once 'C:\xampp\htdocs\greenrescue\connection.php';
-      $query = "select * from donator ORDER BY donator_id DESC limit 10";
-                  $stmt = mysqli_query($conn,$query);
-                  if($stmt){
-                    while($row = mysqli_fetch_assoc($stmt)){
-                        $donator_id[] = $row['donator_id'];
-                        $display_name = $row['display_name'];
-                        $message = $row['message'];
-                        $date = $row['date'];
-                        $amount = $row['amount'];
-      
-            echo'
-              <div class="user">
-                <div class="row-fir ">
-                  <div class="name "> '.$display_name.'</div>
-                  <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
-                </div>
-                <div class="row2 ">
-                  <div class="message "> '.$message.'</div>
-                  <div class="date  ">  '.$date.'</div>
-                </div>
-              </div>';
-           
-            }}
-           
-            ?>      
-              </div>
-      
-          </ul>
-        </div>
-
-        <div class="row">
-          
-          <ul class="features">
-          <div class="box">
-              
-              
-            <?php
-      require_once 'C:\xampp\htdocs\greenrescue\connection.php';
-      $query = "select * from donator ORDER BY amount DESC limit 10";
-                  $stmt = mysqli_query($conn,$query);
-                  if($stmt){
-                    while($row = mysqli_fetch_assoc($stmt)){
-                        $donator_id[] = $row['donator_id'];
-                        $display_name = $row['display_name'];
-                        $message = $row['message'];
-                        $date = $row['date'];
-                        $amount = $row['amount'];
-      
-            echo'
-              <div class="user">
-                <div class="row-fir ">
-                  <div class="name "> '.$display_name.'</div>
-                  <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
-                </div>
-                <div class="row2 ">
-                  <div class="message "> '.$message.'</div>
-                  <div class="date  ">  '.$date.'</div>
-                </div>
-              </div>';
-           
-            }}
-           
-            ?>      
-              </div>
-          </ul>
-        </div>
-        <div class="row">
-          <div class="price-details">
-            <span class="price">49</span>
-            <p>For team collaboration</p>
+      echo'
+        <div class="user">
+          <div class="row ">
+            <div class="name "> '.$display_name.'</div>
+            <div class="amount"><div class="amt"> Rs '.$amount.'</div></div>
           </div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i><span>200 GB Premium Bandwidth</span></li>
-            <li><i class="fas fa-check"></i><span>FREE 100+ Installation Scripts WordPress Supported</span></li>
-            <li><i class="fas fa-check"></i><span>Two FREE Domain Registration .com and .np extensions only</span></li>
-            <li><i class="fas fa-check"></i><span>Unlimited Email Accounts & Databases</span></li>
-          </ul>
+          <div class="row2 ">
+            <div class="message "> '.$message.'</div>
+            <div class="date  ">  '.$date.'</div>
+          </div>
+        </div>';
+     
+      }}
+     
+      ?>      
         </div>
-      </div>
-    </div>
-    <!-- <button>Choose plan</button> -->
-  </div>
-
 
         <div class="right">  
 
         <?php
-  require_once 'C:\xampp\htdocs\greenrescue\connection.php';
+  require_once 'connection.php';
   $imageQuery = "SELECT * FROM Image order by id desc limit 1";
   $imageResult = mysqli_query($conn, $imageQuery);
   if ($imageResult && mysqli_num_rows($imageResult) > 0) {

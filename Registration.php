@@ -41,12 +41,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
     <link rel="stylesheet" href="style.css" />
-    
+    <style>
+      .toggle-eye {
+        display: none;
+      }
+
+      .eye-icon {
+        position: relative;
+        top: -28px;
+        left: 95%;
+        cursor: pointer;
+      }
+
+      .eye-icon i {
+        color: #888;
+      }
+
+      .password-input {
+        display: flex;
+        align-items: center;
+      }
+
+      .password-input h5 {
+        margin-right: 10px;
+      }
+    </style>
   </head>
 
   <body>
     <header>
-    <h2 class="logo"><img src="img/logo.png" alt="" height="90px" /></h2>
+      <h2 class="logo">
+        <img src="img/logo.png" alt="" height="90px" />
+      </h2>
       <nav class="navigation">
         <a href="index.php">Home</a>
         <a href="#">Services</a>
@@ -87,36 +113,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               <input type="email" name="email" id="email" class="input" />
             </div>
           </div>
+
           <div class="input-div two">
             <div class="i">
               <i class="fas fa-lock"></i>
             </div>
-            <div>
+            <div class="password-input">
               <h5>Password</h5>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="input"
-              />
+              <input type="password" name="password" id="password" class="input" />
+              <span class="eye" id="togglePassword">
+                <i class="fas fa-eye"></i>
+              </span>
             </div>
           </div>
+
           <div class="input-div two">
             <div class="i">
               <i class="fas fa-lock"></i>
             </div>
             <div>
               <h5>Confirm Password</h5>
-              <input
-                type="password"
-                name="cpassword"
-                id="cpassword"
-                class="input"
-              />
+              <input type="password" name="cpassword" id="cpassword" class="input" />
+              <!-- <span class="eye" id="toggleCPassword">
+                <i class="fas fa-eye"></i>
+              </span> -->
             </div>
           </div>
 
-          <input type="submit" value="Sign Up" class="btn" onclick="validateForm(event)"/>
+          <input
+            type="submit"
+            value="Sign Up"
+            class="btn"
+            onclick="validateForm(event)"
+          />
           <span
             >Already have an account? <a href="login.php">Login now</a></span
           >
@@ -125,7 +154,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </div>
 
     <footer>
-      <p>Copyright &copy;2023 Green Rescue</p>
+      <p>&copy; 2023 Green Rescue</p>
     </footer>
 
     <script src="script.js"></script>
@@ -165,6 +194,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // If validation passes, you can proceed with form submission
         document.getElementById("registrationForm").submit();
       }
+   
+      function togglePasswordVisibility(targetId) {
+    var targetInput = document.getElementById(targetId);
+    var eyeIcon = document.getElementById(`toggle${targetId.charAt(0).toUpperCase() + targetId.slice(1)}`).querySelector('i');
+
+    if (targetInput.type === "password") {
+      targetInput.type = "text";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
+    } else {
+      targetInput.type = "password";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+    }
+  }
+
+  document.getElementById("togglePassword").addEventListener("click", function() {
+    togglePasswordVisibility("password");
+  });
+
+  document.getElementById("toggleCPassword").addEventListener("click", function() {
+    togglePasswordVisibility("cpassword");
+  });
+
+
     </script>
   </body>
 </html>
