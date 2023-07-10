@@ -91,9 +91,9 @@ function filterTable($query)
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             padding: 5px;
-            background: lightgray;
+            background: #fafafb;
             margin: 0;
-            border:2px solid lightgray;
+            border:2px solid #fafafb;
           }
      
 
@@ -103,10 +103,11 @@ function filterTable($query)
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
             padding: 5px;
-            background: lightgray;
+            background: #fafafb;
             margin: -5px;
             border:none;
             margin-bottom:10px;
+            
           }
           
       .user {
@@ -156,8 +157,20 @@ function filterTable($query)
       }
       .date {
         font-size: 11px;}
+        
+        input[type=text] {
+       
+         -webkit-transition: 0.5s;
+         transition: 0.1s;
+         outline: none;
+       }
+        input[type=text]:focus {
+  border: 3px solid lightblue;
+}  
+
+
           .search:hover{
-            background: gray;
+            background: lightblue;
           }
           .heading{
             color: #1f5f5b;
@@ -226,6 +239,7 @@ function filterTable($query)
 
             <input type="text" name="valueToSearch" class="input" placeholder="Search Name" id="searchInput"> 
             <input type="submit" name="search" class="search" value="Search">
+           
            
      
            <!-- <br><br> -->

@@ -360,14 +360,14 @@ main label {
 }
 
 #tab-1:checked ~ main .slider {
-  left: 5%;
-  width: 150px;
+  left: 1%;
+  width: 200px;
   transform: translateX(0);
 }
 
 #tab-2:checked ~ main .slider {
-  left: 50%;
-  width: 150px;
+  left: 45%;
+  width: 200px;
   transform: translateX(0);
 }
 
@@ -500,6 +500,7 @@ main label {
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+
 }
 
 .picture {
@@ -635,7 +636,7 @@ main label {
     <label for="tab-2" class="tab-2">Top</label>
   </div>
   <a href="search.php" class="search-icon">
-    <img src="img/logo/search.png" alt="" height="20px">
+    <img src="img/logo/search.png" alt="" height="25px">
   </a>
   <div class="slider"></div>
 </main>
