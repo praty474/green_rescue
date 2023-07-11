@@ -94,6 +94,8 @@ function filterTable($query)
             background: #fafafb;
             margin: 0;
             border:2px solid #fafafb;
+            text-transform: uppercase;
+            padding-left: 20px;
           }
      
 
@@ -107,6 +109,8 @@ function filterTable($query)
             margin: -5px;
             border:none;
             margin-bottom:10px;
+           
+
             
           }
           
@@ -161,7 +165,7 @@ function filterTable($query)
         input[type=text] {
        
          -webkit-transition: 0.5s;
-         transition: 0.1s;
+         transition: 0.3s;
          outline: none;
        }
         input[type=text]:focus {
@@ -171,6 +175,8 @@ function filterTable($query)
 
           .search:hover{
             background: lightblue;
+            -webkit-transition: 0.5s;
+         transition: 1.5s;
           }
           .heading{
             color: #1f5f5b;
@@ -181,31 +187,49 @@ function filterTable($query)
             color: #1f5f5b;
         
           }
+          
  
+         
           .back-button {
-            float: left; /* Float the Back button to the left */
-            margin-top: 10px; /* Adjust the top margin as needed */
-            margin-left: 10px;
-        }
+  display: flex;
+  align-items: center; 
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
-        .back {
-            display: inline-block; /* Make the Back button inline-block */
-            height: 20px;
-            width: 50px;
-            background: lightgray;
-            font-size: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius:15px;
-            padding: 10px 5px;
-            color:#1f5f5b;}
+.back {
+  display: inline-block;
+  height: 20px;
+  width: 80px;
+  background: lightgray;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px 8px;
+  color: #1f5f5b;
+  text-align: center;
+  align-items: center;
+  display: flex; 
+}
+
+.arrow {
+  font-size: 30px;
+  margin-right: 5px; 
+}
+
+
 
         .back:hover{
           background: darkgreen;
           color:white;
+          -webkit-transition: 0.5s;
+         transition: 1s;
         }
-.logo{
-  margin-left: -50px;
+
+        .logo {
+  margin: 0 auto;
+  display: block; 
 }
 
 
@@ -223,23 +247,29 @@ function filterTable($query)
     </script>
     </head>
     <body >
-    <div class="back-button">
-            <a class="back" href="index.php">Back</a>
-          </div>
-          
+   
+          <div class="back-button">
+  <a class="back" href="index.php">
+    <ion-icon class="arrow" name="arrow-back"></ion-icon>
+    <span>Back</span>
+  </a>
+</div>
+
          <img src="img/plant.png" alt="" class="bg-img">
          <img src="img/5330558.jpg" alt="" class="bg-img">
       
 
         <div class="container">
-          <img src="img/logo.png" alt="" height="100px" class="logo">
+        <img src="img/logo.png" alt="" height="100px" class="logo">
         <h1 class="heading">DONOR SEARCH</h1>
         <p id="quote">“A fool sees not the same tree that a wise man sees.” <br>-William Blake</p>
         <form action="search.php" method="post" onsubmit="return validateInput();" >
 
             <input type="text" name="valueToSearch" class="input" placeholder="Search Name" id="searchInput"> 
-            <input type="submit" name="search" class="search" value="Search">
-           
+            <input type="submit" name="search" class="search " value="Search">
+                         
+        </div>
+
            
      
            <!-- <br><br> -->
@@ -283,4 +313,6 @@ function filterTable($query)
     </center>
             </div>
     </body>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 </html>

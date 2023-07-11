@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/fav.png" />
     <title>Green Rescue</title>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     
     <style>
@@ -130,19 +132,21 @@
         font-weight: bolder;
 color: #1f5f5b;
       }
-      .box4 img{
-        width: 40px;
-        mix-blend-mode: normal;
+      .box4 a{
+      
         margin: 0px 10px;
       float: right;
+      color: #003329;
+      font-size: 40px;
       }
-      .box4 img:hover{
-        width: 45px;
-        height: 45px;
-      background: lightgray;
-      border-radius: 50%;
-        margin: 0px 10px;
-      float: right;
+      .box4 a:hover{
+    color: #3bb78f;
+    font-size: 42px;
+    -webkit-transition: 0.5s;
+         transition: 0.3s;
+
+
+      
       }
       
     
@@ -212,13 +216,7 @@ color: #1f5f5b;
       transform: translateY(0);
     }
 
-    #search:hover{
-      height:40px;
-      width:40px;
-      color: gray;
-      background:  lightgray;
-      border-radius: 50%;
-    }
+ 
 
     
 html {
@@ -299,7 +297,19 @@ main {
   justify-content: center;
   padding: 0 10px;
   cursor: pointer;
+  font-size: 30px;
+  color: #003329;
 }
+.search-icon:hover{
+  
+  font-size: 32px;
+color: green;
+-webkit-transition: 0.5s;
+         transition: 0.2s;
+
+}
+
+
 /* 
 #tab-1:checked~main .tab-1,
 #tab-2:checked~main .tab-2,
@@ -367,7 +377,7 @@ main label {
 
 #tab-2:checked ~ main .slider {
   left: 45%;
-  width: 200px;
+  width: 190px;
   transform: translateX(0);
 }
 
@@ -538,6 +548,9 @@ main label {
   color: #1f5f5b;
 }
 
+a{
+  text-decoration: none;
+}
 
 
     </style>
@@ -636,7 +649,8 @@ main label {
     <label for="tab-2" class="tab-2">Top</label>
   </div>
   <a href="search.php" class="search-icon">
-    <img src="img/logo/search.png" alt="" height="25px">
+    <!-- <img src="img/logo/search.png" alt="" height="25px"> -->
+    <ion-icon name="search"></ion-icon>
   </a>
   <div class="slider"></div>
 </main>
@@ -760,26 +774,34 @@ main label {
   <h1 class="head">Team Members</h1>
   <div class="team">
     <div class="member">
+  
       <div class="picture"><img src="img/prabesh.jpg"  alt="" srcset=""></div>
       <div class="details">
         <div class="team_name">Prabesh Gupta</div>
         <div class="position">Developer</div>
+    
       </div>
     </div>
     <div class="member">
+    
       <div class="picture"><img src="img/prabin.jpg" alt="" srcset=""></div>
       <div class="details">
         <div class="team_name">Prabin Rai</div>
         <div class="position">Developer</div>
+     
       </div>
     </div>
+  
     <div class="member">
+    
       <div class="picture"><img src="img/pratyush.jpg" alt="" srcset=""></div>
       <div class="details">
         <div class="team_name">Pratyush Kayastha</div>
         <div class="position">Developer</div>
+       
       </div>
     </div>
+        
   </div>
 </div>
 
@@ -788,9 +810,10 @@ main label {
           <div class= "social">
             Social
           <!-- <h1>Social Medias</h1> -->
-            <a href="http://facebook.com" ><img src="img/logo/fb.png" alt=""></a>
-            <a href="http://instagram.com" ><img src="img/logo/ig.png" alt=""></a>
-            <a href="http://twitter.com" ><img src="img/logo/twitter.png" alt=""></a>
+  
+            <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="https://www.twitter.com/"><ion-icon name="logo-twitter"></ion-icon></a>
     </div>
             <!-- <img src="img/hill1.png" alt="" height="100px"> -->
         </div>
