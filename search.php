@@ -205,7 +205,7 @@ function filterTable($query)
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 10px 8px;
   color: #1f5f5b;
   text-align: center;
@@ -213,6 +213,9 @@ function filterTable($query)
   display: flex; 
 }
 
+         
+
+         
 .arrow {
   font-size: 30px;
   margin-right: 5px; 
@@ -221,7 +224,11 @@ function filterTable($query)
 
 
         .back:hover{
-          background: darkgreen;
+          background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
           color:white;
           -webkit-transition: 0.5s;
          transition: 1s;
@@ -249,7 +256,7 @@ function filterTable($query)
     <body >
    
           <div class="back-button">
-  <a class="back" href="index.php">
+  <a class="back " href="index.php">
     <ion-icon class="arrow" name="arrow-back"></ion-icon>
     <span>Back</span>
   </a>
@@ -272,14 +279,11 @@ function filterTable($query)
 
            
      
-           <!-- <br><br> -->
      
            
      
       <center>
 
-      <!-- populate table from mysql database -->
-      <!-- populate table from mysql database -->
             
                     <?php
                     require_once 'connection.php';

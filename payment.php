@@ -16,17 +16,27 @@
       }
 
       .radio-option {
-        display: inline-block;
-        margin-right: 10px;
+        /* display: flex; */
+        margin-right: 11px;
+        margin-bottom: 10px;
+      }
+      .select_amt{
+        width: 330px;
+        display: flex;
+        /* flex-direction: column; */
+        flex-direction: row;
+        flex-wrap: wrap;
       }
 
       .radio-option label {
         display: block;
         background-color: #f1f1f1;
         color: #333;
-        padding: 10px 15px;
+
+        padding: 25px 30px;
         cursor: pointer;
         border-radius: 4px;
+        border-radius: 10px;
       }
 
       .radio-option label:hover {
@@ -36,19 +46,41 @@
       .radio-option input[type="radio"]:checked + label {
         background-color: #4caf50;
         color: white;
+        -webkit-transition: 0.5s;
+         transition: 0.6s ease-in-out;
       }
 
       #give-custom-amount {
         display: none;
       }
 
-      input[type="text"],
-      input[type="email"],
+
+      /* input[type="email"],
       input[type="submit"] {
         display: block;
         width: 100%;
         padding: 10px;
         margin-bottom: 10px;
+      } */
+   input[type="text"]
+   {
+    /* trbl */
+        display: flex;
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        height: 50px;
+        font-weight: 600;
+       
+        border: 2px solid lightgray;
+      }   
+      input[type="text"]:focus
+   {
+    
+        border: 2px solid black;
+        -webkit-transition: 0.5s;
+         transition: 0.6s ease-in-out;
       }
 
       input[type="submit"] {
@@ -105,6 +137,7 @@
       <div class="form-outer">
         <form action="#" method="POST">
           <div class="page slide-page">
+            <div class="select_amt">
           <div class="radio-option">
         <input
           type="radio"
@@ -113,7 +146,7 @@
           value="100"
           checked
         />
-        <label for="give-amount-100">$100</label>
+        <label for="give-amount-100">100</label>
       </div>
 
       <div class="radio-option">
@@ -123,7 +156,7 @@
           name="amount"
           value="250"
         />
-        <label for="give-amount-250">$250</label>
+        <label for="give-amount-250">250</label>
       </div>
 
       <div class="radio-option">
@@ -133,7 +166,7 @@
           name="amount"
           value="500"
         />
-        <label for="give-amount-500">$500</label>
+        <label for="give-amount-500">500</label>
       </div>
 
       <div class="radio-option">
@@ -143,24 +176,26 @@
           name="amount"
           value="750"
         />
-        <label for="give-amount-750">$750</label>
+        <label for="give-amount-750">750</label>
       </div>
 
       <div class="radio-option">
-        <input
+        <!-- <input
           type="radio"
           id="give-amount-custom"
           name="amount"
           value="custom"
-        />
-        <label for="give-amount-custom">Custom Amount</label>
+        /> -->
+        <!-- <label for="give-amount-custom">Custom Amount</label> -->
         <input
           type="text"
-          id="give-custom-amount"
+          id="custom-amount"
           name="amount"
-          placeholder="Enter Custom Amount"
-          style="display: none"
+          placeholder="Other Amount"
+          
         />
+        <!-- style="display: none" -->
+      </div>
       </div>
             <!-- <div class="field">
            
