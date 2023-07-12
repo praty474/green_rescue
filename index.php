@@ -96,6 +96,7 @@
      color: green;
      height: 280px;
      width: 200px;
+     padding: 20px ;
      
      
   }
