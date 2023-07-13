@@ -105,10 +105,15 @@ form .page .field .label {
 form .page .field input {
   height: 70%;
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 18px;
+}
+form .page .field input:focus {
+  border: 2px solid black;
+  -webkit-transition: 0.5s;
+  transition: 1s ease-in-out;
 }
 form .page .field select {
   width: 100%;
@@ -231,4 +236,79 @@ form .page .btns button.next {
   right: 37%;
 }
 
-/* amount */
+input[type="radio"] {
+  display: none;
+}
+
+.radio-option {
+  margin-bottom: 10px;
+}
+.select_amt {
+  width: 330px;
+  display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.radio-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  color: #333;
+  height: 80px;
+  width: 95px;
+  cursor: pointer;
+  border-radius: 4px;
+  border-radius: 10px;
+}
+
+.radio-option label:hover {
+  background-color: #e0e0e0;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  background-color: #4caf50;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.6s ease-in-out;
+}
+.radio-option input[type="radio"]:not(:checked) + label {
+  -webkit-transition: 0.5s;
+  transition: 0.6s ease-out;
+}
+
+#give-custom-amount {
+  display: none;
+}
+
+/* input[type="text"]  */
+#custom-amount {
+  display: inline-block;
+  width: 190px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 55px;
+  font-weight: 500;
+  border: 2px solid lightgray;
+  font-size: 20px;
+  margin: 0px;
+  text-align: center;
+}
+
+#custom-amount:focus {
+  border: 2px solid black;
+  -webkit-transition: 0.5s;
+  transition: 0.6s ease-in-out;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}

@@ -71,3 +71,49 @@ prevBtnFourth.addEventListener("click", function (event) {
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
+
+jQuery(function ($) {
+  $("#give-amount-custom").click(function () {
+    $("#give-custom-amount").show();
+  });
+
+  $(
+    "#give-amount-100, #give-amount-250, #give-amount-500, #give-amount-750"
+  ).click(function () {
+    $("#give-custom-amount").hide();
+  });
+
+  $("#donation-form").submit(function (e) {
+    e.preventDefault();
+
+    var amount = $('input[name="amount"]:checked').val();
+    var firstName = $("#give-firstname").val();
+    var lastName = $("#give-lastname").val();
+    var email = $("#give-email").val();
+
+    if (amount === "custom") {
+      amount = $("#give-custom-amount").val();
+    }
+
+    var donationData = {
+      amount: amount,
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+    };
+
+    give.processDonation(donationData);
+  });
+});
+
+// Get the radio buttons and input field
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const inputField = document.getElementById("custom-amount");
+
+// Add event listener for input field focus
+inputField.addEventListener("focus", function () {
+  // Uncheck all radio buttons
+  radioButtons.forEach(function (button) {
+    button.checked = false;
+  });
+});

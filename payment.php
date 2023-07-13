@@ -5,90 +5,12 @@
     <meta charset="utf-8" />
     <title>Donate</title>
     <link rel="icon" type="image/x-icon" href="img/fav.png" />
-    <link rel="stylesheet" href="payment.css" />
+    <!-- <link rel="stylesheet" href="payment.css" /> -->
+    <link rel="stylesheet" href="donate.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/give/2.11.0/js/give.min.js"></script>
-    <style>
-           input[type="radio"],
-      input[type="email"] {
-        display: none;
-      }
 
-      .radio-option {
-        /* display: flex; */
-        margin-right: 11px;
-        margin-bottom: 10px;
-      }
-      .select_amt{
-        width: 330px;
-        display: flex;
-        /* flex-direction: column; */
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      .radio-option label {
-        display: block;
-        background-color: #f1f1f1;
-        color: #333;
-
-        padding: 25px 30px;
-        cursor: pointer;
-        border-radius: 4px;
-        border-radius: 10px;
-      }
-
-      .radio-option label:hover {
-        background-color: #e0e0e0;
-      }
-
-      .radio-option input[type="radio"]:checked + label {
-        background-color: #4caf50;
-        color: white;
-        -webkit-transition: 0.5s;
-         transition: 0.6s ease-in-out;
-      }
-
-      #give-custom-amount {
-        display: none;
-      }
-
-
-      /* input[type="email"],
-      input[type="submit"] {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-      } */
-   input[type="text"]
-   {
-    /* trbl */
-        display: flex;
-        width: 90%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-        height: 50px;
-        font-weight: 600;
-       
-        border: 2px solid lightgray;
-      }   
-      input[type="text"]:focus
-   {
-    
-        border: 2px solid black;
-        -webkit-transition: 0.5s;
-         transition: 0.6s ease-in-out;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
     <div class="header">
@@ -144,9 +66,9 @@
           id="give-amount-100"
           name="amount"
           value="100"
-          checked
-        />
-        <label for="give-amount-100">100</label>
+          
+          />
+        <label for="give-amount-100">Rs 100</label>
       </div>
 
       <div class="radio-option">
@@ -155,8 +77,9 @@
           id="give-amount-250"
           name="amount"
           value="250"
+          checked
         />
-        <label for="give-amount-250">250</label>
+        <label for="give-amount-250">Rs 250</label>
       </div>
 
       <div class="radio-option">
@@ -166,7 +89,7 @@
           name="amount"
           value="500"
         />
-        <label for="give-amount-500">500</label>
+        <label for="give-amount-500">Rs 500</label>
       </div>
 
       <div class="radio-option">
@@ -176,7 +99,7 @@
           name="amount"
           value="750"
         />
-        <label for="give-amount-750">750</label>
+        <label for="give-amount-750">Rs 750</label>
       </div>
 
       <div class="radio-option">
@@ -185,8 +108,8 @@
           id="give-amount-custom"
           name="amount"
           value="custom"
-        /> -->
-        <!-- <label for="give-amount-custom">Custom Amount</label> -->
+        />
+        <label for="give-amount-custom">Custom Amount</label> -->
         <input
           type="text"
           id="custom-amount"
@@ -286,41 +209,10 @@
       </div>
     </div>
 
-    <script src="payment.js"></script>
+    <script src="donate.js"></script>
     <script>
-        jQuery(function ($) {
-        $("#give-amount-custom").click(function () {
-          $("#give-custom-amount").show();
-        });
+      
 
-        $(
-          "#give-amount-100, #give-amount-250, #give-amount-500, #give-amount-750"
-        ).click(function () {
-          $("#give-custom-amount").hide();
-        });
-
-        $("#donation-form").submit(function (e) {
-          e.preventDefault();
-
-          var amount = $('input[name="amount"]:checked').val();
-          var firstName = $("#give-firstname").val();
-          var lastName = $("#give-lastname").val();
-          var email = $("#give-email").val();
-
-          if (amount === "custom") {
-            amount = $("#give-custom-amount").val();
-          }
-
-          var donationData = {
-            amount: amount,
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-          };
-
-          give.processDonation(donationData);
-        });
-      });
     </script>
 
   </body>
