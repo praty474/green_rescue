@@ -1,6 +1,4 @@
-
 <?php
-
 if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
@@ -11,7 +9,7 @@ if(isset($_POST['search']))
      $query = "SELECT * FROM `donator` WHERE CONCAT(`display_name`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
     if(mysqli_num_rows($search_result) == 0) {
-      echo '<script>alert("No data found.");</script>';
+      // echo '<script>alert("No data found.");</script>';
       $yourURL="search.php";
 echo ("<script>location.href='$yourURL'</script>");
   }
@@ -238,6 +236,47 @@ background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, F
   margin: 0 auto;
   display: block; 
 }
+.toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        .show-toast {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
 
 
         </style>
@@ -316,7 +355,30 @@ background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, F
     
     </center>
             </div>
+            <div class="toast" id="toast">
+        No data found.
+    </div>
+
     </body>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        // Function to show the toast message
+        function showToast() {
+            var toast = document.getElementById("toast");
+            toast.className = "toast show-toast";
 
+            // Hide the toast after 3 seconds (3000 milliseconds)
+            setTimeout(function(){
+                toast.className = toast.className.replace("show-toast", "");
+            }, 3000);
+        }
+       
+        // Check if search result is empty and show toast if true
+        <?php
+        if(mysqli_num_rows($search_result) == 0) {
+            echo 'showToast();';
+        }
+        ?>
+ 
+    </script>
 </html>
