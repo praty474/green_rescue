@@ -267,6 +267,8 @@ input[type="radio"] {
   cursor: pointer;
   border-radius: 4px;
   border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .radio-option label:hover {
