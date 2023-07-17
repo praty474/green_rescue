@@ -75,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       </h2>
       <nav class="navigation">
         <a href="index.php">Home</a>
-        <a href="#">Services</a>
+        <a href="index.php#describe">Services</a>
         <a href="login.php" class="active">Login</a>
         <a href="payment.php">Donate</a>
         <a href="contact.html">Contact</a>
