@@ -1,6 +1,7 @@
 <?php
 require_once 'connection.php';
-$query = "select * from donator ";
+$query = "SELECT * FROM donator";
+
 $stmt = mysqli_query($conn, $query);
 if ($stmt) {
   $sum = 0; // Initialize the sum variable
@@ -11,11 +12,26 @@ if ($stmt) {
     $date = $row['date'];
     $amount = $row['amount'];
     $sum += $amount; // Add the amount to the sum variable
-
-
   }
 }
 
+// Calculate today's donation
+$today = date('Y-m-d');
+$queryToday = "SELECT SUM(amount) AS today_donation FROM donator WHERE DATE(date) = CURDATE()";
+$resultToday = mysqli_query($conn, $queryToday);
+$todayDonation = mysqli_fetch_assoc($resultToday)['today_donation'];
+
+function total_user()
+{
+  global $conn;
+  $sql = "SELECT COUNT(*) FROM donator";
+  if ($result = mysqli_query($conn, $sql)) {
+    $row = mysqli_fetch_array($result);
+    $rowcount = $row[0];
+    mysqli_free_result($result);
+  }
+  return $rowcount;
+}
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +127,9 @@ if ($stmt) {
 
         <div class="card">
           <div>
-            <div class="numbers">101</div>
+            <div class="numbers">
+              <?php echo total_user(); ?>
+            </div>
             <div class="cardName">Total Donars</div>
           </div>
           <div class="iconBx">
@@ -121,7 +139,9 @@ if ($stmt) {
 
         <div class="card">
           <div>
-            <div class="numbers">Rs 1010</div>
+            <div class="numbers">
+              <?php echo 'Rs ' . $todayDonation; ?>
+            </div>
             <div class="cardName">Today Donation</div>
           </div>
           <div class="iconBx">
