@@ -1,3 +1,36 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Retrieve the form data
+  $display_name = $_POST["display_name"];
+  $amount = $_POST["amount"];
+  $message = $_POST["message"];
+  $date = date("Y-m-d H:i:s");
+
+
+  // Connect to the database (Replace DB_HOST, DB_USER, DB_PASS, and DB_NAME with your database credentials)
+  $conn = mysqli_connect("localhost", "root", "", "gr_db");
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+  // Prepare the SQL query
+  $sql = "INSERT INTO donator (display_name, message, date, amount) VALUES ('$display_name', '$message', '$date', '$amount')";
+
+  // Execute the query
+  if (mysqli_query($conn, $sql)) {
+    // echo "Record inserted successfully!";
+    header("Location: index.php");
+    exit;
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+
+  // Close the database connection
+  mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -108,10 +141,10 @@
             <div class="label">Name</div>
             <input type="text" name="display_name" />
           </div>
-          <div class="field">
+          <!-- <div class="field">
             <div class="label">Email Address</div>
             <input type="email" name="email" />
-          </div>
+          </div> -->
           <div class="field">
             <div class="label">Message</div>
             <!-- <input type="textarea" name= "message" maxlength="60"/> -->
