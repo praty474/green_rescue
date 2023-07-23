@@ -170,7 +170,6 @@ function total_user()
             <h2>Recent Donations</h2>
             <a href="#" class="viewAll">View All</a>
           </div>
-
           <table>
             <thead>
               <tr>
@@ -180,51 +179,33 @@ function total_user()
                 <td>Payment Method</td>
               </tr>
             </thead>
+            <?php
+            require_once 'C:\xampp\htdocs\greenrescue\connection.php';
+            $query = "select * from donator ORDER BY donator_id DESC limit 10";
+            $stmt = mysqli_query($conn, $query);
+            if ($stmt) {
+              while ($row = mysqli_fetch_assoc($stmt)) {
+                $donator_id = $row['donator_id'];
+                $display_name = $row['display_name'];
+                $message = $row['message'];
+                $date = $row['date'];
+                $amount = $row['amount'];
 
-            <tbody>
+
+
+                echo '<tbody>
               <tr>
-                <td>Prabesh Gupta</td>
-                <td>Rs 100</td>
-                <td>06 Jul 2023</td>
+                <td>' . $display_name . '</td>
+                <td>Rs ' . $amount . '</td>
+                <td> ' . $date . '</td>
                 <td><span class="method stripe">Card</span></td>
-              </tr>
-              <tr>
-                <td>Ayush Gupta</td>
-                <td>Rs 250</td>
-                <td>06 Jul 2023</td>
-                <td><span class="method khalti">Khalti</span></td>
-              </tr>
-              <tr>
-                <td>Jay Prakash Gupta</td>
-                <td>Rs 400</td>
-                <td>06 Jul 2023</td>
-                <td><span class="method khalti">Khalti</span></td>
-              </tr>
-              <tr>
-                <td>Sanu Gupta</td>
-                <td>Rs 260</td>
-                <td>05 Jul 2023</td>
-                <td><span class="method stripe">Card</span></td>
-              </tr>
-              <tr>
-                <td>Prabin Rai</td>
-                <td>Rs 500</td>
-                <td>05 Jul 2023</td>
-                <td><span class="method stripe">Card</span></td>
-              </tr>
-              <tr>
-                <td>Pratyush Kyastha</td>
-                <td>Rs 400</td>
-                <td>05 Jul 2023</td>
-                <td><span class="method khalti">Khalti</span></td>
-              </tr>
-              <tr>
-                <td>Balen Shah</td>
-                <td>Rs 1000</td>
-                <td>04 Jul 2023</td>
-                <td><span class="method khalti">Khalti</span></td>
-              </tr>
-            </tbody>
+              </tr> </tbody>';
+
+              }
+            }
+
+            ?>
+
           </table>
         </div>
 
