@@ -105,12 +105,7 @@
                 }
 
                 ?>
-                <?php
-                echo '
-          <div id= "total"> Total Amount Collected: <span id="sum">Rs ' . $sum . '</span
-          > </div>
-        ';
-                ?>
+
             </tbody>
         </table>
     </div>

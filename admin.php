@@ -168,7 +168,7 @@ function total_user()
         <div class="recentDonation">
           <div class="cardHeader">
             <h2>Recent Donations</h2>
-            <a href="#" class="viewAll">View All</a>
+            <a href="admins.php" class="viewAll">View All</a>
           </div>
           <table>
             <thead>
@@ -181,7 +181,7 @@ function total_user()
             </thead>
             <?php
             require_once 'C:\xampp\htdocs\greenrescue\connection.php';
-            $query = "select * from donator ORDER BY donator_id DESC limit 10";
+            $query = "select * from donator ORDER BY donator_id DESC limit 7";
             $stmt = mysqli_query($conn, $query);
             if ($stmt) {
               while ($row = mysqli_fetch_assoc($stmt)) {
