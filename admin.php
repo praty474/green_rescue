@@ -19,7 +19,9 @@ if ($stmt) {
 $today = date('Y-m-d');
 $queryToday = "SELECT SUM(amount) AS today_donation FROM donator WHERE DATE(date) = CURDATE()";
 $resultToday = mysqli_query($conn, $queryToday);
+
 $todayDonation = mysqli_fetch_assoc($resultToday)['today_donation'];
+
 
 function total_user()
 {
@@ -32,7 +34,20 @@ function total_user()
   }
   return $rowcount;
 }
+function total_member()
+{
+  global $conn;
+  $sql = "SELECT COUNT(*) FROM users";
+  if ($result = mysqli_query($conn, $sql)) {
+    $row = mysqli_fetch_array($result);
+    $rowcount = $row[0];
+    mysqli_free_result($result);
+  }
+  return $rowcount;
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +65,7 @@ function total_user()
       <ul>
         <li>
           <a href="#">
-            <span class="icon"><ion-icon name="leaf"></ion-icon></span>
+            <span class="icon"><img src="img/logo.png" alt="" height="40" srcset=""></span>
             <span class="title">Green Rescue</span>
           </a>
         </li>
@@ -117,8 +132,10 @@ function total_user()
       <div class="cardBox">
         <div class="card">
           <div>
-            <div class="numbers">1010</div>
-            <div class="cardName">Memebers</div>
+            <div class="numbers">
+              <?php echo total_member(); ?>
+            </div>
+            <div class="cardName">Members</div>
           </div>
           <div class="iconBx">
             <ion-icon name="people-outline"></ion-icon>
@@ -168,7 +185,7 @@ function total_user()
         <div class="recentDonation">
           <div class="cardHeader">
             <h2>Recent Donations</h2>
-            <a href="admins.php" class="viewAll">View All</a>
+            <a href="admin_donator.php" class="viewAll">View All</a>
           </div>
           <table>
             <thead>
