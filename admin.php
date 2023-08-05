@@ -65,8 +65,8 @@ function total_member()
       <ul>
         <li>
           <a href="#">
-            <span class="icon"><img src="img/logo.png" alt="" height="40" srcset=""></span>
-            <span class="title">Green Rescue</span>
+            <span class="icon"><img src="img/fav.png" alt="" height="70" srcset=""></span>
+            <span class="title" style="margin:10px; font-weight: bold">Green Rescue</span>
           </a>
         </li>
         <li>

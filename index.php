@@ -877,7 +877,7 @@ background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 
     //user
 
-    // JavaScript code to reveal "user" class on scroll all at once
+    // JavaScript code to reveal "user" class 
     const userElements = document.querySelectorAll('.user');
 
     const revealUser = () => {

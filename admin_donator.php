@@ -7,24 +7,21 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
-    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <style>
-        table {
-            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-            /* border-radius: 10px;s */
-
-
-        }
-
-
         .container {
             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
             padding: 20px;
             border-radius: 10px;
+            min-height: 590px;
+        }
+
+        .heading {
+            color: darkcyan;
+            text-align: center;
         }
     </style>
 </head>
@@ -41,43 +38,45 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="home-outline" style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="people-outline" style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Customers</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="chatbox-outline" style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Messages</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="help-circle-outline"
+                                style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Help</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="settings-outline" style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="lock-closed-outline"
+                                style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Password</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="log-out-outline" style="font-size: 28px;"></ion-icon></span>
                         <span class="title">Log out</span>
                     </a>
                 </li>
@@ -94,8 +93,9 @@
                 </div>
             </div>
 
-            <h1>Donator</h1>
+
             <div class="container">
+                <h1 class="heading">Donator List</h1>
                 <div class="row header" style="text-align:center;color:green">
 
                 </div>
